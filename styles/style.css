@@ -48,6 +48,7 @@ ol {
 }
 
 .result__video-container {
+  position: relative;
   block-size: 386px;
   margin-block-end: 16px;
 }
@@ -80,6 +81,7 @@ ol {
 }
 
 .content__list {
+  position: relative;
   block-size: 298px;
   overflow-y: scroll;
   overflow-x: hidden;
