@@ -12,6 +12,7 @@ html {
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
+  padding: 133px 30px;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
@@ -36,3 +37,41 @@ ul,
 ol {
   list-style: none;
 }
+
+.content {
+  min-block-size: 534px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 711px 399px;
+  column-gap: 30px;
+  align-items: end;
+}
+
+.search-form {
+  display: grid;
+  grid-template-columns: 225px 212px 194px;
+  column-gap: 40px;
+  row-gap: 20px;
+  align-items: start;
+}
+
+.content__details {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.title {
+  margin: 0;
+  margin-block-end: 26px;
+  font-size: 75px;
+  font-weight: bold;
+  line-height: 94%;
+}
+
+.content__list {
+  block-size: 298px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+
