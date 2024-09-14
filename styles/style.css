@@ -47,6 +47,17 @@ ol {
   align-items: end;
 }
 
+.result__video-container {
+  block-size: 386px;
+  margin-block-end: 16px;
+}
+
+.result__video {
+  block-size: 100%;
+  inline-size: 100%;
+  object-fit: cover;
+}
+
 .search-form {
   display: grid;
   grid-template-columns: 225px 212px 194px;
@@ -74,4 +85,21 @@ ol {
   overflow-x: hidden;
 }
 
+.content__list-item:not(:last-child) {
+  margin-block-end: 30px;
+}
 
+.content__video-card {
+  display: flex;
+  align-items: start;
+}
+
+.content__video-card-description-container {
+  flex-grow: 1;
+}
+
+.content__video-card-thumbnail {
+  inline-size: 194px;
+  block-size: 103px;
+  object-fit: cover; 
+}
