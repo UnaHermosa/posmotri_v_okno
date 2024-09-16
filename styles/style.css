@@ -12,9 +12,9 @@ html {
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
-  padding: 133px 30px;
+  padding: 135px 30px;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: 'Fira Sans Condensed', 'Arial', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
 }
@@ -49,7 +49,7 @@ ol {
 }
 
 .button {
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: 'Fira Sans Condensed', 'Arial', sans-serif;
   font-size: 18px;
   line-height: 1;
   font-weight: 700;
@@ -58,6 +58,24 @@ ol {
   background-color: transparent;
   border: 1px solid #fff;
   cursor: pointer;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:active {
+  background-color: #545050;
+  text-decoration: none;
 }
 
 .content {
@@ -83,7 +101,7 @@ ol {
 
 .search-form {
   display: grid;
-  grid-template-columns: 225px 212px 194px;
+  grid-template-columns: 225px 214px 194px;
   column-gap: 40px;
   row-gap: 20px;
   align-items: start;
@@ -106,7 +124,8 @@ ol {
 }
 
 .search-form__label-text {
-  vertical-align:top;
+  font-size: 18px;
+  line-height: 0.8;
 }
 
 .search-form__textfield {
@@ -115,7 +134,7 @@ ol {
   padding-block-start: 2.5px;
   padding-block-end: 2.5px;
   padding-inline-end: 12px;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: 'Fira Sans Condensed', 'Arial', sans-serif;
   font-size: 18px;
   line-height: 1;
   font-weight: 400;
@@ -128,25 +147,53 @@ ol {
 }
 
 .search-form__textfield::placeholder {
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: 'Fira Sans Condensed', 'Arial', sans-serif;
   font-size: 18px;
   line-height: 1;
   font-weight: 400;
   color: rgb(255 255 255 / 0.7);
 }
 
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__textfield:active {
+  border: 1px solid #fff;
+}
+
 .search-form__checkbox-list {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 14px;
+  column-gap: 15px;
   row-gap: 15px;
 }
 
 .search-form__pseudo-checkbox {
   display: inline-block;
+  padding-block-start: 1px;
+  padding-inline-start: 1px;
   width: 19px;
   height: 19px;
   border: 1px solid #fff;
+}
+
+.search-form__pseudo-checkbox:hover + .search-form__label-text,
+.search-form__label-text:hover {
+  text-decoration: underline;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
+  content: '';
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
 }
 
 .search-form__submit-button {
@@ -176,14 +223,18 @@ ol {
 .content__list {
   position: relative;
   block-size: 298px;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   scrollbar-color: rgb(255 255 255 / 0.3) transparent;
   scrollbar-width: thin;
 }
 
+.content__list:focus {
+  outline: none;
+}
+
 .content__list::-webkit-scrollbar {
-  width: 3px;
+  width: 1px;
 }
 
 ::-webkit-scrollbar-track {
@@ -199,13 +250,42 @@ ol {
 }
 
 .content__card-link {
+  display: block;
+  margin: 2px;
   text-decoration: none;
   color: inherit;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.5px;
+  text-underline-offset: 6px;
+}
+
+.content__card-link:active,
+.content__card-link_current {
+  text-decoration: none;
+  background-color: #545050;
 }
 
 .content__video-card {
   display: flex;
   align-items: start;
+  column-gap: 2px;
+}
+
+.content__video-card-description-container {
+  padding-block-start: 6px;
+  flex-grow: 1;
 }
 
 .content__video-card-title {
@@ -215,11 +295,7 @@ ol {
   font-weight: 700;
   line-height: 1;
   text-transform: uppercase;
-}
-
-.content__video-card-description-container {
-  padding-block-start: 3px;
-  flex-grow: 1;
+  flex-shrink: 1;
 }
 
 .content__video-card-description {
@@ -234,7 +310,5 @@ ol {
 }
 
 .more-button {
-  width: 100%;
-  padding-block-start: 6px;
-  padding-block-end: 6px;
+  padding: 6px 144px;
 }
