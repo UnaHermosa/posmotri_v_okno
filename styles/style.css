@@ -9,10 +9,11 @@ html {
 }
 
 .page {
+  display: flex;
+  align-items: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
-  padding: 225px 30px;
   color: #fff;
   font-family: 'Fira Sans Condensed', 'Arial', sans-serif;
   font-size: 18px;
@@ -81,6 +82,7 @@ ol {
 .content {
   min-block-size: 534px;
   margin: 0 auto;
+  margin-block-start: -112px;
   display: grid;
   grid-template-columns: 711px 399px;
   column-gap: 30px;
@@ -97,6 +99,7 @@ ol {
   block-size: 100%;
   inline-size: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .search-form {
@@ -120,6 +123,9 @@ ol {
 
 .search-form__label {
   width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 5px;
   cursor: pointer;
 }
 
@@ -132,17 +138,13 @@ ol {
   outline-offset: 1px;
 }
 
-.search-form__label:has(:active) {
-  border: 1px solid #fff;
-}
-
 .search-form__label-text {
   font-size: 18px;
   line-height: 0.8;
 }
 
 .search-form__textfield {
-  inline-size: 100%;
+  inline-size: 225px;
   padding: 0;
   padding-block-start: 2.5px;
   padding-block-end: 2.5px;
@@ -228,7 +230,6 @@ ol {
   position: relative;
   block-size: 298px;
   overflow-y: auto;
-  overflow-x: hidden;
   scrollbar-color: rgb(255 255 255 / 0.3) transparent;
   scrollbar-width: thin;
 }
@@ -288,29 +289,35 @@ ol {
 }
 
 .content__video-card-description-container {
+  max-inline-size: 200px;
   padding-block-start: 6px;
   flex-grow: 1;
 }
 
 .content__video-card-title {
+  max-inline-size: 200px;
   margin-block-end: 6px;
   font-family: 'Oswald', 'Arial', sans-serif;
   font-size: 30px;
   font-weight: 700;
   line-height: 1;
   text-transform: uppercase;
-  flex-shrink: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .content__video-card-description {
   font-size: 18px;
   line-height: 0.9;
+  word-break: break-all;
 }
 
 .content__video-card-thumbnail {
-  inline-size: 194px;
+  min-inline-size: 194px;
   block-size: 103px;
   object-fit: cover;
+  object-position: center;
 }
 
 .more-button {
